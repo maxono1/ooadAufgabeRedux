@@ -115,13 +115,15 @@ public class TextIO {
   private void finishTask() {
     System.out.print("welche Id: ");
     int id = Eingabe.leseInt();
-    
   }
 
   private void showResponsibilities() {
     System.out.print("fuer welche Person: ");
     String bearbeiter = Eingabe.leseString();
-    
+
+    store.showTaskFromPerson(bearbeiter);
+
+    //System.out.println();
   }
 
   private void protectTasks() {

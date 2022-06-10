@@ -17,4 +17,9 @@ public class TimerStore extends AbstractDecoratorStore{
     System.out.println("Dauer von " + action 
             + ": " + (System.nanoTime()-start));
   }
+
+  @Override
+  public void showTaskFromPerson(String person) {
+    super.store.showTaskFromPerson(person);
+  }
 }

@@ -88,4 +88,13 @@ public class TaskList implements Cloneable{
     }
     return sb.toString();
   }
+
+  public void showTaskFromPerson(String person){
+    for (Task t: this.tasks.values()) {
+      if (t.getResponsible().equals(person)){
+        System.out.println(t);
+      }
+    }
+  }
+
 }

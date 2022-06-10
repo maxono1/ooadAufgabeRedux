@@ -34,4 +34,8 @@ public class State implements Cloneable{
     State result = new State(this.taskList.clone());
     return result;
   }
+
+  public void showTaskFromPerson(String person){
+    this.taskList.showTaskFromPerson(person);
+  }
 }

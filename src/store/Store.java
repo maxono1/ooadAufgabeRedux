@@ -44,4 +44,8 @@ public class Store implements StoreInterface {
     this.subscribers.add(subscriber);
     subscriber.onChange(this.currentState.clone());
   }
+
+  public void showTaskFromPerson(String person){
+    this.currentState.showTaskFromPerson(person);
+  }
 }
