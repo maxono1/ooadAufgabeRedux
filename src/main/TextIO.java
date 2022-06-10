@@ -3,12 +3,18 @@ package main;
 import action.Action;
 import action.ActionFactory;
 import action.Art;
+import entity.Task;
+import entity.TaskList;
 import reducer.Reducer;
 import state.State;
 import store.Store;
 import store.StoreInterface;
 import store.Subscriber;
 import store.TimerStore;
+
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
 public class TextIO {
 
@@ -96,7 +102,14 @@ public class TextIO {
   }
 
   private void testData() {
-    
+    TaskList testdaten = TaskList.testdaten();
+    Map<Integer, Task> taskMap = testdaten.getTasks();
+    Collection<Task> taskList = taskMap.values();
+    State newState = new State();
+    for (Task t: taskList) {
+      newState.add(t.getText(),t.getResponsible());
+    }
+    store = new TimerStore(new Store(newState, new Reducer()));
   }
 
   private void finishTask() {
