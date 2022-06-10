@@ -22,4 +22,9 @@ public class TimerStore extends AbstractDecoratorStore{
   public void showTaskFromPerson(String person) {
     super.store.showTaskFromPerson(person);
   }
+
+  @Override
+  public void finishTask(int id) {
+    store.finishTask(id);
+  }
 }

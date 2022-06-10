@@ -98,5 +98,5 @@ public class Task  implements Cloneable{
     result.setId(this.id);
     result.setFinished(this.finished);
     return result;
-  } 
+  }
 }

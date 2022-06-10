@@ -21,6 +21,9 @@ public class State implements Cloneable{
     return this.taskList;
   }
 
+  public void finishTask(int id){
+    taskList.finishTask(id);
+  }
   public void add(String text, String responsible){
     this.taskList.add(text, responsible);
   }

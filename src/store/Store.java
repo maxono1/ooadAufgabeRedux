@@ -48,4 +48,7 @@ public class Store implements StoreInterface {
   public void showTaskFromPerson(String person){
     this.currentState.showTaskFromPerson(person);
   }
+  public void finishTask(int id){
+   currentState.finishTask(id);
+  }
 }

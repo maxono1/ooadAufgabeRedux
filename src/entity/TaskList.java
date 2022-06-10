@@ -76,8 +76,10 @@ public class TaskList implements Cloneable{
   public Map<Integer, Task> getTasks() {
     return tasks;
   }
-  
-  
+
+  public void finishTask(int id){
+    this.tasks.get(id).setFinished(true);
+  }
   
   @Override
   public String toString(){

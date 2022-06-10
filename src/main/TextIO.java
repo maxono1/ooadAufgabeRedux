@@ -115,6 +115,8 @@ public class TextIO {
   private void finishTask() {
     System.out.print("welche Id: ");
     int id = Eingabe.leseInt();
+    store.finishTask(id);
+    System.out.println("Ist abgeschlossen!");
   }
 
   private void showResponsibilities() {
@@ -129,7 +131,7 @@ public class TextIO {
   private void protectTasks() {
     System.out.print("kommaseparierte Liste nicht loeschbarer Tasks: ");
     String prot = Eingabe.leseString();
-    
+
   }
 
   private void rearrangeTasks() {

@@ -27,4 +27,5 @@ public class Reducer {
     throw new IllegalArgumentException(
             "Action " + action + " nicht unterstuetzt");
   }
+
 }
