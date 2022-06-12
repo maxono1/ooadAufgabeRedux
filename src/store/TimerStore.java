@@ -19,11 +19,6 @@ public class TimerStore extends AbstractDecoratorStore {
   }
 
   @Override
-  public void showTaskFromPerson(String person) {
-    super.store.showTaskFromPerson(person);
-  }
-
-  @Override
   public void rearrangeTasks(String alt, String neu) {
     super.store.rearrangeTasks(alt, neu);
   }

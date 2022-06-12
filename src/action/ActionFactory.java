@@ -26,6 +26,11 @@ public class ActionFactory {
             throw new IllegalArgumentException("DELETE benoetigt Parameter");
           }
           return new DeleteAction((Integer) value[0]);
+        case SHOW:
+          if (value.length == 0){
+            throw new IllegalArgumentException("SHOW benoetigt Parameter");
+          }
+          return new ShowAction((String) value[0]);
         case FINISH:
           if (value.length == 0) {
             throw new IllegalArgumentException("FINSIH benoetigt Parameter");

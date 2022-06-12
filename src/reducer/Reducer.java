@@ -3,6 +3,7 @@ package reducer;
 import action.Action;
 import action.AddAction;
 import action.DeleteAction;
+import action.ShowAction;
 import action.FinishAction;
 import state.State;
 
@@ -24,7 +25,13 @@ public class Reducer {
       state.delete(((DeleteAction) action).getDeleteId());
       return;
     }
-    if (action instanceof FinishAction) {
+
+    if (action instanceof ShowAction) {
+      state.showTaskFromPerson(((ShowAction) action).getResponsible());
+      return;
+    }
+
+    if (action instanceof FinishAction){
       state.finishTask(((FinishAction) action).getFinishId());
       return;
     }

@@ -124,7 +124,8 @@ public class TextIO {
     System.out.print("fuer welche Person: ");
     String bearbeiter = Eingabe.leseString();
 
-    store.showTaskFromPerson(bearbeiter);
+    Action action = ActionFactory.create(Art.SHOW, bearbeiter);
+    store.dispatch(action);
 
     //System.out.println();
   }
