@@ -142,6 +142,7 @@ public class TextIO {
     System.out.print("neue bearbeitende Person: ");
     String neu = Eingabe.leseString();
 
-    store.rearrangeTasks(alt, neu);
+    Action action = ActionFactory.create(Art.REARRANGE, alt, neu);
+    store.dispatch(action);
   }
 }

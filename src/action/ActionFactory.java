@@ -36,6 +36,16 @@ public class ActionFactory {
             throw new IllegalArgumentException("FINSIH benoetigt Parameter");
           }
           return new FinishAction((Integer) value[0]);
+        case REARRANGE:
+          List<String> tmp2 = new ArrayList<>();
+          for(Object o:value){
+            tmp2.add(o.toString());
+          }
+          if (tmp2.size() < 2) {
+            throw new IllegalArgumentException(
+                    "Hinzufuegen benoetigt zwei Parameter");
+          }
+          return new RearrangeTasksAction(tmp2);
         default:
           throw new IllegalArgumentException("Action(" + command + ","
                   + Arrays.asList(value) + ") existiert nicht");

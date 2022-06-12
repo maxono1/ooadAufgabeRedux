@@ -1,10 +1,6 @@
 package reducer;
 
-import action.Action;
-import action.AddAction;
-import action.DeleteAction;
-import action.ShowAction;
-import action.FinishAction;
+import action.*;
 import state.State;
 
 public class Reducer {
@@ -33,6 +29,11 @@ public class Reducer {
 
     if (action instanceof FinishAction){
       state.finishTask(((FinishAction) action).getFinishId());
+      return;
+    }
+
+    if (action instanceof RearrangeTasksAction){
+      state.rearrangeTasks(action.getParameter().get(0),action.getParameter().get(1));
       return;
     }
 

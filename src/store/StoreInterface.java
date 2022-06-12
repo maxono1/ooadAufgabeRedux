@@ -9,6 +9,5 @@ public interface StoreInterface {
   public State getState();
   public void subscribe(Subscriber subscriber);
   public void notifySubscribers();
-  public void rearrangeTasks(String alt, String neu);
 
 }

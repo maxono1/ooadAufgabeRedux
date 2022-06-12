@@ -45,19 +45,6 @@ public class StorePruefuer implements StoreInterface{
         subscriber.onChange(this.currentState.clone());
     }
 
-    public void showTaskFromPerson(String person){
-        this.currentState.showTaskFromPerson(person);
-    }
-
-    @Override
-    public void rearrangeTasks(String alt, String neu) {
-
-    }
-
-    public void finishTask(int id){
-        currentState.finishTask(id);
-    }
-
     public void ueberpruefen(String name){
 
     }

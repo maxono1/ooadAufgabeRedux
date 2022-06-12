@@ -18,8 +18,4 @@ public class TimerStore extends AbstractDecoratorStore {
             + ": " + (System.nanoTime() - start));
   }
 
-  @Override
-  public void rearrangeTasks(String alt, String neu) {
-    super.store.rearrangeTasks(alt, neu);
-  }
 }
