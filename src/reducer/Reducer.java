@@ -2,6 +2,7 @@ package reducer;
 
 import action.*;
 import state.State;
+import util.User;
 
 public class Reducer {
   
@@ -12,8 +13,13 @@ public class Reducer {
 
   private void reduceIntern(State state, Action action) {
     if (action instanceof AddAction) {
-      state.add(action.getParameter().get(0),
-               action.getParameter().get(1));
+      if(User.allowed(action.getParameter().get(1))){
+        state.add(action.getParameter().get(0),
+                action.getParameter().get(1));
+      } else {
+        throw new IllegalArgumentException("User "+ action.getParameter().get(1) + " nicht autorisiert");
+      }
+
       return;
     }
 
@@ -42,8 +48,7 @@ public class Reducer {
       return;
     }
 
-    throw new IllegalArgumentException(
-            "Action " + action + " nicht unterstuetzt");
+    throw new IllegalArgumentException("Action " + action + " nicht unterstuetzt");
   }
 
 }
