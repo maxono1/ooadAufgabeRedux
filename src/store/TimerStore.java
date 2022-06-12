@@ -2,20 +2,20 @@ package store;
 
 import action.Action;
 
-public class TimerStore extends AbstractDecoratorStore{
-  
+public class TimerStore extends AbstractDecoratorStore {
+
   private long start;
-  
+
   public TimerStore(StoreInterface store) {
     super(store);
   }
-  
+
   @Override
   public void dispatch(Action action) {
     start = System.nanoTime();
     super.store.dispatch(action);
-    System.out.println("Dauer von " + action 
-            + ": " + (System.nanoTime()-start));
+    System.out.println("Dauer von " + action
+            + ": " + (System.nanoTime() - start));
   }
 
   @Override
@@ -25,11 +25,6 @@ public class TimerStore extends AbstractDecoratorStore{
 
   @Override
   public void rearrangeTasks(String alt, String neu) {
-    super.store.rearrangeTasks(alt,neu);
-  }
-
-  @Override
-  public void finishTask(int id) {
-    store.finishTask(id);
+    super.store.rearrangeTasks(alt, neu);
   }
 }

@@ -115,7 +115,8 @@ public class TextIO {
   private void finishTask() {
     System.out.print("welche Id: ");
     int id = Eingabe.leseInt();
-    store.finishTask(id);
+    Action action = ActionFactory.create(Art.FINISH, id);
+    store.dispatch(action);
     System.out.println("Ist abgeschlossen!");
   }
 

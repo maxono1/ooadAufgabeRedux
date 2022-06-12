@@ -26,7 +26,11 @@ public class ActionFactory {
             throw new IllegalArgumentException("DELETE benoetigt Parameter");
           }
           return new DeleteAction((Integer) value[0]);
-
+        case FINISH:
+          if (value.length == 0) {
+            throw new IllegalArgumentException("FINSIH benoetigt Parameter");
+          }
+          return new FinishAction((Integer) value[0]);
         default:
           throw new IllegalArgumentException("Action(" + command + ","
                   + Arrays.asList(value) + ") existiert nicht");

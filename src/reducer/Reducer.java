@@ -3,6 +3,7 @@ package reducer;
 import action.Action;
 import action.AddAction;
 import action.DeleteAction;
+import action.FinishAction;
 import state.State;
 
 public class Reducer {
@@ -21,6 +22,10 @@ public class Reducer {
 
     if (action instanceof DeleteAction) {
       state.delete(((DeleteAction) action).getDeleteId());
+      return;
+    }
+    if (action instanceof FinishAction) {
+      state.finishTask(((FinishAction) action).getFinishId());
       return;
     }
 

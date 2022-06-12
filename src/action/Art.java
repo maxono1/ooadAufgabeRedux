@@ -1,5 +1,5 @@
 package action;
 
 public enum Art {
-  ADD, DELETE
+  ADD, DELETE, FINISH
 }
