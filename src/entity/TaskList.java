@@ -99,4 +99,11 @@ public class TaskList implements Cloneable{
     }
   }
 
+  public void rearrangeTasks(String alt, String neu) {
+    for (Task t: this.tasks.values()) {
+      if (t.getResponsible().equals(alt)){
+        t.setResponsible(neu);
+      }
+    }
+  }
 }

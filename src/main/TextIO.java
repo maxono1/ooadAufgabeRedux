@@ -139,6 +139,7 @@ public class TextIO {
     String alt = Eingabe.leseString();
     System.out.print("neue bearbeitende Person: ");
     String neu = Eingabe.leseString();
-    
+
+    store.rearrangeTasks(alt, neu);
   }
 }

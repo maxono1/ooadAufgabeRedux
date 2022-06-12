@@ -11,5 +11,6 @@ public interface StoreInterface {
   public void notifySubscribers();
   public void finishTask(int id);
   public void showTaskFromPerson(String person);
+  public void rearrangeTasks(String alt, String neu);
 
 }

@@ -41,4 +41,8 @@ public class State implements Cloneable{
   public void showTaskFromPerson(String person){
     this.taskList.showTaskFromPerson(person);
   }
+
+  public void rearrangeTasks(String alt, String neu) {
+    this.taskList.rearrangeTasks(alt, neu);
+  }
 }

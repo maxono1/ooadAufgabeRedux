@@ -24,6 +24,11 @@ public class TimerStore extends AbstractDecoratorStore{
   }
 
   @Override
+  public void rearrangeTasks(String alt, String neu) {
+    super.store.rearrangeTasks(alt,neu);
+  }
+
+  @Override
   public void finishTask(int id) {
     store.finishTask(id);
   }

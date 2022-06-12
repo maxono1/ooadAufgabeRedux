@@ -51,4 +51,9 @@ public class Store implements StoreInterface {
   public void finishTask(int id){
    currentState.finishTask(id);
   }
+
+  @Override
+  public void rearrangeTasks(String alt, String neu) {
+    this.currentState.rearrangeTasks(alt, neu);
+  }
 }
