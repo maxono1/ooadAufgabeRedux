@@ -12,6 +12,7 @@ import store.StoreInterface;
 import store.Subscriber;
 import store.TimerStore;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -133,7 +134,14 @@ public class TextIO {
   private void protectTasks() {
     System.out.print("kommaseparierte Liste nicht loeschbarer Tasks: ");
     String prot = Eingabe.leseString();
+    String[] protArray = prot.split(",");
+    List<Integer> ids = new ArrayList<>();
+    for (String number : protArray){
+      ids.add(Integer.parseInt(number.trim()));
+    }
 
+    Action action = ActionFactory.create(ids);
+    store.dispatch(action);
   }
 
   private void rearrangeTasks() {

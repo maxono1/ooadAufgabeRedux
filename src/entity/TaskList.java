@@ -1,6 +1,7 @@
 package entity;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -45,7 +46,9 @@ public class TaskList implements Cloneable{
   }
   
   public void delete(int id){
-    this.tasks.remove(id);
+    if(this.tasks.get(id).getDeletable()) {
+      this.tasks.remove(id);
+    }
   }
 
   @Override
@@ -105,5 +108,16 @@ public class TaskList implements Cloneable{
         t.setResponsible(neu);
       }
     }
+  }
+
+  public void makeTasksUndeletable(List<Integer> ids){
+
+      for(Integer id: ids){
+
+          tasks.get(id).setDeletable(false);
+
+      }
+
+
   }
 }

@@ -8,6 +8,7 @@ public class Task  implements Cloneable{
   private String text;
   private String responsible;
   private boolean finished = false;
+  private boolean deletable = true;
   
   public Task(){
   }
@@ -50,9 +51,17 @@ public class Task  implements Cloneable{
     this.finished = finished;
   }
 
+  public void setDeletable(boolean deletable){
+    this.deletable = deletable;
+  }
+
+  public boolean getDeletable(){
+    return this.deletable;
+  }
+
   @Override
   public String toString() {
-    return "Task{" + "id=" + id + ", text=" + text + ", responsible=" + responsible + ", finished=" + finished + '}';
+    return "Task{" + "id=" + id + ", text=" + text + ", responsible=" + responsible + ", finished=" + finished + ", deletable=" + deletable + '}';
   }
 
   @Override
@@ -97,6 +106,7 @@ public class Task  implements Cloneable{
     Task result = new Task(this.text, this.responsible);
     result.setId(this.id);
     result.setFinished(this.finished);
+    result.setDeletable(this.deletable);
     return result;
   }
 }

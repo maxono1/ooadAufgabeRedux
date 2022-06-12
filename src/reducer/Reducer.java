@@ -22,6 +22,11 @@ public class Reducer {
       return;
     }
 
+    if (action instanceof MakeUndeletableAction){
+      state.makeTasksUndeletable(((MakeUndeletableAction) action).getIntegerParameters());
+      return;
+    }
+
     if (action instanceof ShowAction) {
       state.showTaskFromPerson(((ShowAction) action).getResponsible());
       return;

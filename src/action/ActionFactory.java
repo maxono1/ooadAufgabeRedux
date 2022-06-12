@@ -55,4 +55,12 @@ public class ActionFactory {
               + Arrays.asList(value) + ") hat falschen Parametertyp :" + e);
     }
   }
+  public static Action create(List<Integer> values){
+
+    if(values.size() == 0) {
+      throw new IllegalArgumentException("MAKE_UNDELETABLE benoetigt Parameter");
+    }
+
+    return new MakeUndeletableAction(values);
+  }
 }

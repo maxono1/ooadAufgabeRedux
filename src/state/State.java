@@ -31,6 +31,10 @@ public class State implements Cloneable{
   public void delete(int id){
     this.taskList.delete(id);
   }
+
+  public void makeTasksUndeletable(List<Integer> ids){
+    this.taskList.makeTasksUndeletable(ids);
+  }
   
   @Override
   public State clone() {

@@ -9,6 +9,7 @@ public abstract class Action{
   // Werte kodieren sollen, aus Typsicherheitsgruenden
   // verzichtet werden
   protected List<String> parameter;
+
   
   public Action(List<String> parameter) {
     this.parameter = parameter;
